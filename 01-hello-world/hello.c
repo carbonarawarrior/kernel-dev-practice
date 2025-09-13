@@ -1,13 +1,13 @@
 #include <linux/module.h>
 #include <linux/init.h>
 
-int init(void) {
+static int __init init(void) {
   printk("Hello Kernel\n");
   return 0;
 }
 
-void exit(void) {
-  printk("Gooddbye Kernel!");
+static void __exit exit(void) {
+  printk("Gooddbye Kernel!\n");
 }
 
 
@@ -15,3 +15,5 @@ module_init(init);
 module_exit(exit);
 
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("carbonarawarriorr");
+MODULE_DESCRIPTION("literal helloworld module");
